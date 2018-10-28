@@ -1,0 +1,138 @@
+body, html {
+    background-color: #FFFFFF;
+    color: #212121;
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+    grid-template-rows: repeat(auto-fill, minmax(1fr, auto));
+    grid-template-columns: repeat(auto-fill, minmax(1fr, auto));
+    height: 100vh;
+}
+
+.menu {
+    float: none;
+    padding: 1.5em;
+    margin-bottom: 30px;
+}
+
+.sidebar {
+    padding: 25px;
+    float: none;
+    grid-area: sidebar;
+}
+
+.footer {
+    float: none;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.footer a {
+    float: none;
+    width: auto;
+    margin: auto;
+    color: black;
+    text-align: center;
+    padding: 5px;
+    /*font-family: Arial, Helvetica, sans-serif;*/
+    /*color: #FFFFFF;*/
+}
+
+.footer a:link, a:visited {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #FFFFFF;
+    background-color: #212121;
+}
+
+.konten {
+    float: none;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    padding: 50px;
+    display: block;
+    /*font-family: Arial, Helvetica, sans-serif;*/
+    /*color: #FFFFFF;*/
+}
+
+
+
+img.rounded {
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+    width: 30%;
+}
+
+div.menu img {
+    width: 30px;
+    margin: auto;
+}
+
+div.info_avatar {
+    margin: auto;
+    padding: 20px;
+    width: 50%;
+    text-align: center;
+}
+
+a.konten:link, a.konten:visited {
+    font-weight: bold;
+    border: #D50000 solid;
+    color: #212121;
+    text-decoration: none;
+}
+
+a.konten:hover {
+    color: #FFFFFF;
+    background-color: #D50000;
+}
+
+
+
+img.icon_svg {
+    width: 75%;
+    height: auto;
+    margin: 5px;
+}
+
+@media only screen and (min-width: 769px) {
+
+    .container {
+        display: grid;
+        grid-template-columns: 4fr auto 1fr 1fr;
+        grid-row-gap: 8px;
+    }
+
+    .menu {
+        grid-column: span 4;
+    }
+
+    .sidebar {
+        grid-row: span 5;
+        grid-column: span 2;
+    }
+
+    .footer {
+        grid-column: span 4;
+    }
+
+    .konten {
+        grid-auto-flow: dense;
+        margin: unset;
+        display: inline-block;
+        /*text-align: center;
+        padding: 50px;*/
+        /*font-family: Arial, Helvetica, sans-serif;*/
+        /*color: #FFFFFF;*/
+    }
+
+}
