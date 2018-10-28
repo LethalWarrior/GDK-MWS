@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" type="text/css" href="../css/calculator.css">
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <a href="../index.html"><img src="../images/Menu Icon.png"></a>
+        </div>
+        <div class="title">
+            <h2>Simple Calculator</h2>
+        </div>
+        <div class="calculatorwrap">
+            <input type="text" class="inputnumber" id="number1" placeholder="Please Input Number">
+            <input type="text" class="inputnumber" id="number2" placeholder="Please Input Number">
+            <button class="addbutton" onclick="showresult()">ADD</button>
+        </div>
+    </div>
+    <div class="footer">
+        <hr><br>
+        <a href="https://github.com/LethalWarrior" target="blank">Github</a>
+        <a href="https://www.facebook.com/robby.auziqni" target="blank">Facebook</a>
+        <a href="https://www.instagram.com/auziqni.rb/" target="blank">Instagram</a><br>
+        <p>This page was created by Robby Auziqni</p><br>
+    </div>
+
+    <script>
+        function showresult() {
+            var num1 = document.getElementById("number1").value;
+            var num2 = document.getElementById("number2").value;
+
+            var result = parseInt(num1) + parseInt(num2);
+            
+            if(isNaN(result)) alert("Wrong Input");
+            else alert("The Result is : " + result);
+        }
+    </script>
+</body>
+</html>

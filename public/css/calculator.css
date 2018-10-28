@@ -1,0 +1,95 @@
+body, html {
+    background-color: #FFFFFF;
+    color: #212121;
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+    grid-template-rows: repeat(auto-fill, minmax(1fr, auto));
+    grid-template-columns: repeat(auto-fill, minmax(1fr, auto));
+    height: 100vh;
+}
+
+.menu {
+    float: none;
+    padding: 1.5em;
+    margin-bottom: 30px;
+    grid-column: span 4;
+}
+
+.menu img {
+    width: 30px;
+    margin: auto;
+}
+
+.title {
+    text-align: center;
+    float: none;
+}
+
+.calculatorwrap {
+    padding: 25px;
+    float: none;
+    grid-template-rows: repeat(auto-fill, minmax(1fr, auto));
+    grid-template-columns: repeat(auto-fill, minmax(1fr, auto));
+    height: auto;
+}
+
+.inputnumber {
+    padding: 1em;
+    float: none;
+    width: 50%;
+    margin: 25px auto;
+    display: block;
+}
+
+.addbutton {
+    font-weight: bold;
+    padding: 1em;
+    float: none;
+    width: 50%;
+    margin: 50px auto;
+    display: block;
+    grid-column: span 4;
+    border: #212121 solid;
+    color: #212121;
+    background: none;
+}
+
+.addbutton:hover {
+    color: white;
+    background: #212121;
+}
+
+.footer {
+    float: none;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.footer a {
+    float: none;
+    width: auto;
+    margin: auto;
+    color: black;
+    text-align: center;
+    padding: 5px;
+    /*font-family: Arial, Helvetica, sans-serif;*/
+    /*color: #FFFFFF;*/
+}
+
+.footer a:link, a:visited {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #FFFFFF;
+    background-color: #212121;
+}
+
+
+
