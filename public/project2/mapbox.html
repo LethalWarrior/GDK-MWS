@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Special Places With Mapbox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+        crossorigin=""></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        .content {
+            display: grid;
+            grid-template-rows: auto;
+            grid-template-columns: auto;
+            float: none;
+            padding: 1em;
+            margin-bottom: 30px;
+        }
+
+        #mapid {
+            height: 350px;
+            margin-bottom: 2em;
+        }
+
+        #placeimage, #description {
+            float: none;
+            height: auto;
+        }
+
+        #placeimage img {
+            margin: auto;
+            width: 100%;
+            height: auto;
+        }
+
+        #description {
+            font-family: Arial, Helvetica, sans-serif;
+            opacity: 0.9;
+            background-color: #212121;
+            color: white;
+            padding: 1em;
+        }
+
+        #description p {
+            text-indent: 50px;
+        }
+
+        #title {
+            margin-bottom: 1em;
+            text-align: center;
+        }
+
+        @media only screen and (min-width: 769px) {
+
+            .container {
+                grid-template-columns: auto;
+            }
+
+            .content {
+                grid-template-rows: auto;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 1em;
+            }
+
+            #mapid, #title {
+                grid-column: span 2;
+            }
+
+            #placeimage {
+                padding: 1em;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="menu">
+            <a href="../index.html">
+                <img src="../images/Menu Icon.png">
+            </a>
+        </div>
+        <div class="content">
+            <h1 id="title">Special Places with Mapbox<hr></h1>
+            <div id="mapid"></div>
+            <div id="placeimage">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Madeena_masjid_nabavi_12122008230.jpg">
+            </div>
+            <div id="description">
+                <h2>The Nabawi Mosque</h2>
+                <hr>
+                <p>
+                    The Prophet's Mosque is a mosque established and originally built by the Islamic prophet Muhammad, situated in the city of
+                    Medina in the Hejazi region of Saudi Arabia. It was the third mosque built in the history of Islam, and
+                    is now one of the largest mosques in the world. It is the second-holiest site in Islam, after the Great
+                    Mosque in Mecca. It is always open, regardless of date or time.
+                </p>
+                <p>
+                    The site was originally adjacent to Prophet Muhammad's house; he settled there after his migration from Mecca to Medina in
+                    622. He shared in the heavy work of construction. The original mosque was an open-air building.
+                </p>
+                <p>
+                    The mosque served as a community center, a court, and a religious school. There was a raised platform for the people who
+                    taught the Quran. Subsequent Islamic rulers greatly expanded and decorated it. In 1909, it became the
+                    first place in the Arabian Peninsula to be provided with electrical lights. The mosque is under the control
+                    of the Custodian of the Two Holy Mosques. The mosque is located in what was traditionally the center
+                    of Medina, with many hotels and old markets nearby. It is a major pilgrimage site. Many pilgrims who
+                    perform the Hajj go on to Medina to visit the mosque, due to its connection to Prophet Muhammad.
+                </p>
+                <br>
+                <em>Source: wikipedia</em>
+            </div>
+        </div>
+        <div class="footer">
+            <hr>
+            <br>
+            <a href="https://github.com/LethalWarrior" target="blank">Github</a>
+            <a href="https://www.facebook.com/robby.auziqni" target="blank">Facebook</a>
+            <a href="https://www.instagram.com/auziqni.rb/" target="blank">Instagram</a>
+            <br>
+            <p>This page was created by Robby Auziqni</p>
+            <br>
+        </div>
+    </div>
+    <script>
+        var coordinate = [24.4680576, 39.6085507]
+        var mymap = L.map('mapid').setView(coordinate, 13);
+
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox.streets',
+            accessToken: 'pk.eyJ1IjoibGV0aGFsd2FycmlvciIsImEiOiJjam56Z2g5ZmkwN2J2M3ZsaTBtd2VzaHlyIn0.2Agu1HWqewdc3Yd-l2HZMA'
+        }).addTo(mymap);
+
+        var marker = L.marker(coordinate).addTo(mymap);
+        var circle = L.circle(coordinate, {
+            color: 'red',
+            fillcolor: '#f03',
+            fillopacity: 0.5,
+            radius: 500
+        }).addTo(mymap);
+
+        marker.bindPopup("<b>The Nabawi Mosque</b><br> The mosque that has been built by Prophet Muhammad ﷺ ").openPopup();
+    </script>
+</body>
+
+</html>

@@ -1,44 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Simple Calculator</title>
-    <link rel="stylesheet" type="text/css" href="../css/calculator.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <style>
+        .content {
+            display: grid;
+            grid-template-rows: auto;
+            grid-template-columns: auto;
+            float: none;
+            padding: 1em;
+            margin-bottom: 30px;
+        }
+
+        .inputnumber {
+            padding: 1em;
+            background: #212121;
+            float: none;
+            grid-column: span 4;
+            color: white;
+            margin-bottom: 1em;
+        }
+
+        .calcbutton {
+            padding: 5px 1em;
+            text-align: center;
+            background: none;
+            border: #D50000 solid thin;
+            font-weight: bolder;
+            font-size: large;
+        }
+
+        .resetbutton {
+            padding: 5px 1em;
+            text-align: center;
+            background: none;
+            border: #D50000 solid thin;
+            font-weight: bolder;
+            font-size: large;
+            grid-column: span 4;
+        }
+
+        .calcbutton:hover,
+        .resetbutton:hover {
+            background: #D50000;
+            color: white;
+        }
+
+        #title {
+            margin-bottom: 1em;
+            text-align: center;
+        }
+
+        #result {
+            grid-column: span 4;
+        }
+
+        .calculatorwrap {
+            display: grid;
+            grid-template-rows: repeat(5, 1fr);
+            grid-template-columns: repeat(4, 1fr);
+            float: none;
+        }
+
+        @media only screen and (min-width: 769px) {
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            #title {
+                grid-column: span 2;
+            }
+
+            .calculatorwrap {
+                padding: 2em;
+                width: 50%;
+                margin: 0 auto;
+            }
+
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
         <div class="menu">
-            <a href="../index.html"><img src="../images/Menu Icon.png"></a>
+            <a href="../index.html">
+                <img src="../images/Menu Icon.png">
+            </a>
         </div>
-        <div class="title">
-            <h2>Simple Calculator</h2>
+        <div class="content">
+            <h1 id="title">Simple Calculator
+                <hr>
+            </h1>
+            <div class="calculatorwrap">
+                <input type="text" class="inputnumber" id="number1" placeholder="Please Input Number">
+                <input type="text" class="inputnumber" id="number2" placeholder="Please Input Number">
+                <button class="calcbutton" onclick="calculate('addition')">+</button>
+                <button class="calcbutton" onclick="calculate('substraction')">-</button>
+                <button class="calcbutton" onclick="calculate('multiplication')">*</button>
+                <button class="calcbutton" onclick="calculate('division')">/</button>
+                <h2 id="result">Result :</h2>
+                <button class="resetbutton" onclick="reset()">Reset</button>
+            </div>
         </div>
-        <div class="calculatorwrap">
-            <input type="text" class="inputnumber" id="number1" placeholder="Please Input Number">
-            <input type="text" class="inputnumber" id="number2" placeholder="Please Input Number">
-            <button class="addbutton" onclick="showresult()">ADD</button>
+        <div class="footer">
+            <hr>
+            <br>
+            <a href="https://github.com/LethalWarrior" target="blank">Github</a>
+            <a href="https://www.facebook.com/robby.auziqni" target="blank">Facebook</a>
+            <a href="https://www.instagram.com/auziqni.rb/" target="blank">Instagram</a>
+            <br>
+            <p>This page was created by Robby Auziqni</p>
+            <br>
         </div>
     </div>
-    <div class="footer">
-        <hr><br>
-        <a href="https://github.com/LethalWarrior" target="blank">Github</a>
-        <a href="https://www.facebook.com/robby.auziqni" target="blank">Facebook</a>
-        <a href="https://www.instagram.com/auziqni.rb/" target="blank">Instagram</a><br>
-        <p>This page was created by Robby Auziqni</p><br>
-    </div>
-
     <script>
-        function showresult() {
-            var num1 = document.getElementById("number1").value;
-            var num2 = document.getElementById("number2").value;
+        function calculate(operation) {
 
-            var result = parseInt(num1) + parseInt(num2);
-            
-            if(isNaN(result)) alert("Wrong Input");
-            else alert("The Result is : " + result);
+            var num1 = parseFloat(document.getElementById('number1').value);
+            var num2 = parseFloat(document.getElementById('number2').value);
+            var resultel = document.getElementById('result');
+            var calculatorwrap = document.getElementsByClassName("calculatorwrap");
+
+            if (!isNaN(num1) && !isNaN(num2)) {
+                switch (operation) {
+                    case 'addition':
+                        resultel.innerHTML = "Result : " + (num1 + num2);
+                        break;
+                    case 'substraction':
+                        resultel.innerHTML = "Result : " + (num1 - num2);
+                        break;
+                    case 'multiplication':
+                        resultel.innerHTML = "Result : " + (num1 * num2);
+                        break;
+                    case 'division':
+                        resultel.innerHTML = "Result : " + (num1 / num2);
+                        break;
+                    default:
+                        break;
+                }
+            } else {
+                alert("Invalid input");
+            }
+        }
+
+        function reset() {
+            var input1 = document.getElementById('number1');
+            var input2 = document.getElementById('number2');
+            var result = document.getElementById('result');
+
+            result.innerHTML = "Result : ";
+            input1.value = "";
+            input2.value = "";
         }
     </script>
 </body>
+
 </html>
