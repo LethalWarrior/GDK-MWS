@@ -1,0 +1,16 @@
+{
+  "places": [
+    {
+      "location": [-6.2085314, 106.7343318],
+      "sponsor": "Warteg murah",
+      "picture": "images/warteg.jpg",
+      "review": "Warteg murah, ambil sendiri sepuasnya."
+    },
+    {
+      "location": [-6.179582, 106.6331912],
+      "sponsor": "Mie pedes level",
+      "picture": "images/mie.jpg",
+      "review": "Berani terima tantangan pedasnya?"
+    }
+  ]
+}

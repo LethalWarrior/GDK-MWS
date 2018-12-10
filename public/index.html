@@ -1,103 +1,102 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Google Developer Kejar MWS - Robby</title>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="icon" sizes="32x32" href="images/icons/icon-512x512.png" />
+    <link rel="manifest" href="./manifest.json" />
     <style>
-        img.rounded {
-            display: block;
-            margin: auto;
-            border-radius: 50%;
-            width: 30%;
+      img.rounded {
+        display: block;
+        margin: auto;
+        border-radius: 50%;
+        width: 30%;
+      }
+
+      div.info_avatar {
+        margin: auto;
+        padding: 20px;
+        width: 50%;
+        text-align: center;
+      }
+
+      a.konten:link,
+      a.konten:visited {
+        font-weight: bold;
+        border: #d50000 solid;
+        color: #212121;
+        text-decoration: none;
+      }
+
+      a.konten:hover {
+        color: #ffffff;
+        background-color: #d50000;
+      }
+
+      img.icon_svg {
+        width: 75%;
+        height: auto;
+        margin: 5px;
+      }
+
+      @media only screen and (min-width: 769px) {
+        .konten {
+          grid-auto-flow: dense;
+          margin: unset;
+          display: inline-block;
         }
 
-        div.info_avatar {
-            margin: auto;
-            padding: 20px;
-            width: 50%;
-            text-align: center;
+        .sidebar {
+          grid-row: span 5;
+          grid-column: span 2;
         }
-
-        a.konten:link,
-        a.konten:visited {
-            font-weight: bold;
-            border: #D50000 solid;
-            color: #212121;
-            text-decoration: none;
-        }
-
-        a.konten:hover {
-            color: #FFFFFF;
-            background-color: #D50000;
-        }
-
-
-
-        img.icon_svg {
-            width: 75%;
-            height: auto;
-            margin: 5px;
-        }
-
-        @media only screen and (min-width: 769px) {
-
-            .konten {
-                grid-auto-flow: dense;
-                margin: unset;
-                display: inline-block;
-            }
-
-            .sidebar {
-                grid-row: span 5;
-                grid-column: span 2;
-            }
-
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="menu">
-            <a href="index.html">
-                <img src="images/Menu Icon.png">
-            </a>
+      <div class="menu">
+        <a href="index.html"> <img src="images/Menu Icon.png" /> </a>
+      </div>
+      <div class="sidebar">
+        <img src="images/me.jpg" alt="rounded_avatar" class="rounded" />
+        <div class="info_avatar">
+          <h2>Google Developer Kejar</h2>
+          <hr />
+          <h4>Mobile Web Specialist Projects</h4>
         </div>
-        <div class="sidebar">
-            <img src="images/me.jpg" alt="rounded_avatar" class="rounded">
-            <div class="info_avatar">
-                <h2>Google Developer Kejar</h2>
-                <hr>
-                <h4>Mobile Web Specialist Projects</h4>
-            </div>
-        </div>
-        <a href="project1/calculator.html" class="konten">
-            <!--<img src="images/calculator.svg" class="icon_svg">-->
-            Simple Calculator
-        </a>
-        <a href="project2/mapbox.html" class="konten">
-            <!--<img src="images/map-location.svg" class="icon_svg">-->
-            Special places with MapBox
-        </a>
-        <a class="konten" href="#">Unspecified Content</a>
-        <a class="konten" href="#">Unspecified Content</a>
-        <a class="konten" href="#">Unspecified Content</a>
-        <a class="konten" href="#">Unspecified Content</a>
-        <div class="footer">
-            <hr>
-            <br>
-            <a href="https://github.com/LethalWarrior" target="blank">Github</a>
-            <a href="https://www.facebook.com/robby.auziqni" target="blank">Facebook</a>
-            <a href="https://www.instagram.com/auziqni.rb/" target="blank">Instagram</a>
-            <br>
-            <p>This page was created by Robby Auziqni</p>
-            <br>
-        </div>
+      </div>
+      <a href="project1/calculator.html" class="konten">
+        <!-- <img src="images/calculator.svg" class="icon_svg"> -->
+        Simple Calculator
+      </a>
+      <a href="project2/mapbox.html" class="konten">
+        <!-- <img src="images/map-location.svg" class="icon_svg"> -->
+        Special places with MapBox
+      </a>
+      <a class="konten" href="project3/fetchjson.html">Fetch JSON</a>
+      <a class="konten" href="#">Unspecified Content</a>
+      <a class="konten" href="#">Unspecified Content</a>
+      <a class="konten" href="#">Unspecified Content</a>
+      <div class="footer">
+        <hr />
+        <br />
+        <a href="https://github.com/LethalWarrior" target="blank">Github</a>
+        <a href="https://www.facebook.com/robby.auziqni" target="blank"
+          >Facebook</a
+        >
+        <a href="https://www.instagram.com/auziqni.rb/" target="blank"
+          >Instagram</a
+        >
+        <br />
+        <p>This page was created by Robby Auziqni</p>
+        <br />
+      </div>
     </div>
-</body>
-
+    <script src="js/register_sw.js"></script>
+  </body>
 </html>
